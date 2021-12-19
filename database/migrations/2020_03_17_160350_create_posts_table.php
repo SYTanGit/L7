@@ -21,6 +21,7 @@ class CreatePostsTable extends Migration
             $table->timestamps();
 
             //new addition
+            $table->text('company_reviewed');
             $table->text('rating');
 
             $table->foreign('user_id')->references('id')->on('users');

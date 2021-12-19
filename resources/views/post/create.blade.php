@@ -7,6 +7,12 @@
             <div class="col-4">
                 <form action="{{ route('post.store') }}" enctype="multipart/form-data" method="post">
                     @csrf
+
+                    <div class="form-group row">
+                        <label for="company_reviewed">Company Under Review</label>
+                        <input class="form-control" type="company_reviewed" name="company_reviewed" id="company_reviewed">
+                    </div>
+
                     <div class="form-group row">
                         <label for="rating">Review Rating</label>
                         <input class="form-control" type="integer" name="rating" id="rating">

@@ -42,21 +42,21 @@
 
                     <!-- Select Cleaning Company/Reviewer -->
 
-          <!--              <div class="form-group row">
+                       <div class="form-group row">
                             <label for="DropDown" class="col-md-4 col-form-label text-md-right">{{ __('Register As?') }}</label>
 
                             <div class="col-md-6">
                                 
                             <select class="form-control" id="DropDown" type="DropDown" name="DropDown">
 
-                            <option >Company </option>
-                            <option >Reviewer</option> -->
+                            <option value="Company">Company </option>
+                            <option value="Reviewer">Reviewer</option> 
 
                             <!--    <option string="Company">Company with Cleaning Freaks</option>
                                 <option string="Reviewer">Clean Freak Reviewer</option> -->
-                 <!--           </select>
+                         </select>
 
-                            </div>-->
+                            </div>
                         </div>
 
 
