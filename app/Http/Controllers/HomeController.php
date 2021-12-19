@@ -27,24 +27,27 @@ class HomeController extends Controller
     {
 
 
-        $user = Auth::user();
-        $profile = Profile::where('user_id', $user->id)->first();
-        $profiles = \App\Profile::where('user_id', $user->id)->get();
-        $profilescount = \App\Profile::where('user_id', $user->id)->count();
+        // $user = Auth::user();
+        // $profile = Profile::where('user_id', $user->id)->first();
+        //$profiles = \App\Profile::all()->get();
+        //$profilescount = \App\Profile::all()->count();
+
+        //$profiles = \App\Profile::where('user_id', $user->id)->get();
+        //$profilescount = \App\Profile::where('user_id', $user->id)->count();
         //$posts = \App\Post::where('user_id', $user->id)->orderBy('created_at', 'desc')->get();
         //$postscount = \App\Post::where('user_id', $user->id)->count();
 
-        return view('welcome', [
-            'user' => $user,
-            'profile' => $profile,
+        /*      return view('welcome', [
+            //'user' => $user,
+            //'profile' => $profile,
             //'posts' => $posts,
             //'postscount' => $postscount,
             'profiles' => $profiles,
             'profilescount' => $profilescount
-        ]);
+        ]);*/
 
         //return view('welcome');
         //return view('home');
-        //return redirect('/profile');
+        return redirect('/profile');
     }
 }

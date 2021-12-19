@@ -31,7 +31,7 @@ class RegisterController extends Controller
      *
      * @var string
      */
-    //  protected $redirectTo = '/profile/create';
+    protected $redirectTo = '/profile/create';
 
     /**
      * Create a new controller instance.
@@ -55,7 +55,9 @@ class RegisterController extends Controller
             'name' => ['required', 'string', 'max:255'],
             'email' => ['required', 'string', 'email', 'max:255', 'unique:users'],
             'password' => ['required', 'string', 'min:1', 'confirmed'],
-            'DropDown' => 'required|in:Company,Reviewer',
+
+
+            'DropDown' => ['required', 'string',],
 
 
 
@@ -80,9 +82,9 @@ class RegisterController extends Controller
 
         //redirect depending on selection
 
-        /* $redirectTo = '/profile/create';
+        //$redirectTo = '/profile/create';
 
-        if ('DropDown' == 'Company') {
+        /*   if ('DropDown' == 'Company') {
             $redirectTo = '/profile/create';
         } else {
             $redirectTo = '/';

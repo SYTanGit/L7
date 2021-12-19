@@ -5,23 +5,30 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 use App\Profile;
+use App\Post;
 
 class ReviewsController extends Controller
 {
     public function index()
     {
-        $user = Auth::user();
-        $profile = Profile::where('user_id', $user->id)->first();
+        //  $user = Auth::user();
+        //  $profile = Profile::where('user_id', $user->id)->first();
         //    $profiles = \App\Profile::where('user_id', $user->id)->get();
         //    $profilescount = \App\Profile::where('user_id', $user->id)->count();
-        $profiles = \App\Profile::where('user_id', $user->id)->get();
-        $profilescount = \App\Profile::where('user_id', $user->id)->count();
-        $posts = \App\Post::where('user_id', $user->id)->orderBy('created_at', 'desc')->get();
-        $postscount = \App\Post::where('user_id', $user->id)->count();
+
+        $profiles = Profile::all();
+        $profilescount = \App\Profile::all()->count();
+
+        //   $posts = \App\Post::where('user_id', $user->id)->orderBy('created_at', 'desc')->get();
+        //  $postscount = \App\Post::where('user_id', $user->id)->count();
+
+
+        $posts = Post::all();
+        $postscount = \App\Post::all()->count();
 
         return view('reviews.r_index', [
-            'user' => $user,
-            'profile' => $profile,
+            //     'user' => $user,
+            //    'profile' => $profile,
             'posts' => $posts,
             'postscount' => $postscount,
             'profiles' => $profiles,

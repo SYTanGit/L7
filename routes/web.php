@@ -13,13 +13,13 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-/*Route::get('/', function () {
+Route::get('/', function () {
     return view('welcome');
-});*/
+});
 
 /*if use the above, the HomeController is skipped */
 
-Route::get('/', 'HomeController@index');
+//Route::get('/', 'HomeController@index');
 
 
 Route::get('/profile', 'ProfileController@index');
@@ -29,6 +29,8 @@ Route::get('/profile/edit', 'ProfileController@edit');
 Route::post('/profile/{id}/update', 'ProfileController@update')->name('profile.update');
 
 Route::get('/post/create', 'PostController@create');
+Route::get('/post/ad_delete', 'PostController@chooseDestroy');
+Route::post('/post/ad_destroy', 'PostController@destroy')->name('post.destroy');
 Route::post('/post', 'Postcontroller@store')->name('post.store');
 Route::get('/post/{postID}', 'Postcontroller@show');
 

@@ -15,8 +15,8 @@ class ProfileController extends Controller
 
         //    $profiles = \App\Profile::where('id')->get();
         //    $profilescount = \App\Profile::where('id')->count();
-        $profiles = \App\Profile::where('user_id', $user->id)->get();
-        $profilescount = \App\Profile::where('user_id', $user->id)->count();
+        //$profiles = \App\Profile::all()->get();
+        // $profilescount = \App\Profile::all()->count();
         $posts = \App\Post::where('user_id', $user->id)->orderBy('created_at', 'desc')->get();
         $postscount = \App\Post::where('user_id', $user->id)->count();
 
@@ -25,8 +25,8 @@ class ProfileController extends Controller
             'profile' => $profile,
             'posts' => $posts,
             'postscount' => $postscount,
-            'profiles' => $profiles,
-            'profilescount' => $profilescount
+            // 'profiles' => $profiles,
+            //  'profilescount' => $profilescount
         ]);
     }
 
@@ -38,6 +38,7 @@ class ProfileController extends Controller
     public function store()
     {
         $data = request()->validate([
+            'company_name' => 'required',
             'description' => 'required',
             'profilepic' => ['required', 'image'],
         ]);
@@ -48,6 +49,7 @@ class ProfileController extends Controller
 
         $profile->user_id = $user->id;
         $profile->description = request('description');
+        $profile->company_name = request('company_name');
         $profile->image = $imagePath;
         $saved = $profile->save();
 

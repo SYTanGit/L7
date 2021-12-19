@@ -17,7 +17,9 @@
             
                 <div class="pt-3">{{$profile->description}}</div>
                 <a href="/profile/edit" class="pt-3">Edit your profile!</a>
-                
+
+                <div>
+                 <a href="/reviews/r_index" class="pt-10">Check out reviews!</a> </div>
         </div>
 
         <!--
@@ -40,17 +42,21 @@
         </div>
     </div>
 
-<!--
-    <div class="row pt-5">
-        @foreach($posts as $post)
+
+ <!--   <div class="row pt-5">  
+        {{-- @foreach($posts as $post)
             <div class="col-4 mb-5">
                 <a href="/post/{{$post->id}}">
                     <img src="/storage/{{$post->image}}" class="w-100">
+                    
                 </a>
-            </div>
-        @endforeach
-    </div>
 
-    -->
+               
+
+            </div>
+        @endforeach --}}
+  </div>  -->
+
+   
 </div>
 @endsection
