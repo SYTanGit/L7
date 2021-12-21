@@ -11,7 +11,7 @@ class ReviewsController extends Controller
 {
     public function index()
     {
-        //  $user = Auth::user();
+        $user = Auth::user();
         //  $profile = Profile::where('user_id', $user->id)->first();
         //    $profiles = \App\Profile::where('user_id', $user->id)->get();
         //    $profilescount = \App\Profile::where('user_id', $user->id)->count();
@@ -27,7 +27,7 @@ class ReviewsController extends Controller
         $postscount = \App\Post::all()->count();
 
         return view('reviews.r_index', [
-            //     'user' => $user,
+            'user' => $user,
             //    'profile' => $profile,
             'posts' => $posts,
             'postscount' => $postscount,

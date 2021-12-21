@@ -22,6 +22,13 @@
                  <a href="/reviews/r_index" class="pt-10">Check out reviews!</a> </div>
         </div>
 
+
+        {{-- <div class="col-2 pt-3">
+        @if($user->name == 'A')
+            <a href="/post/ad_delete" class="pt-3 animate__animated animate__wobble">Secret Admin Link!</a>
+        @endif
+        </div> --}}
+
         <!--
         <div class="col-3"></div>
         <div class="col-2 pt-3">
@@ -41,6 +48,7 @@
             <div class="pt-2"><a href="/post/create" class="btn btn-primary">Add a post!</a></div>            
         </div>
     </div>
+
 
 
  <!--   <div class="row pt-5">  

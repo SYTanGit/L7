@@ -11,6 +11,7 @@
 
     <!-- Scripts -->
     <script src="{{ asset('js/app.js') }}" defer></script>
+    <script scr="{{mix('js/app.js')}}"></script>
    <!--image wobble and tinkergram header animation-->
       <link
     rel="stylesheet"

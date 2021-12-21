@@ -5,10 +5,39 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 use App\Post;
+use App\Profile;
 
 
 class PostController extends Controller
 {
+
+    public function index()
+    {
+        //  $user = Auth::user();
+        //  $profile = Profile::where('user_id', $user->id)->first();
+        //    $profiles = \App\Profile::where('user_id', $user->id)->get();
+        //    $profilescount = \App\Profile::where('user_id', $user->id)->count();
+
+        //  $profiles = Profile::all();
+        //  $profilescount = \App\Profile::all()->count();
+
+        //   $posts = \App\Post::where('user_id', $user->id)->orderBy('created_at', 'desc')->get();
+        //  $postscount = \App\Post::where('user_id', $user->id)->count();
+
+
+        $posts = Post::all();
+        $postscount = \App\Post::all()->count();
+
+        return view('post.ad_delete', [
+            //     'user' => $user,
+            //    'profile' => $profile,
+            'posts' => $posts,
+            'postscount' => $postscount,
+            //    'profiles' => $profiles,
+            //   'profilescount' => $profilescount
+        ]);
+    }
+
     public function create()
     {
         //To check whether user is Auth, before routing to post create page
@@ -74,16 +103,19 @@ class PostController extends Controller
         $post = Post::where('id', $postID)->first();
 
         $post->delete();
+        //return view('reviews.r_index');
         return view('post.ad_delete');
         //Post::delete([$postID]);
-        //    echo ("User Record deleted successfully.");
+
+
+
         //  return redirect()->route('users.index');
     }
 
     public function chooseDestroy()
     {
         //Post::delete([$postID]);
-        //    echo ("User Record deleted successfully.");
+        //echo ("User Record deleted successfully.");
         return view('post.ad_delete');
     }
 }
